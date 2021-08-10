@@ -1,0 +1,98 @@
+### Create Attendance 
+POST http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "timeIn": "2021-04-18 06:00",
+    "timeOut": "2021-04-18 17:00",
+    "memberID": 3,
+    "eventID": 2
+} 
+
+### Create Attendance 
+POST http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "timeIn": "2021-04-18 08:00",
+    "timeOut": "2021-04-18 17:00",
+    "memberID": 2,
+    "eventID": 2
+} 
+
+
+### Create Attendance - returns an error, member not existing
+POST http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "timeIn": "2021-04-18 07:00",
+    "timeOut": "2021-04-18 17:00",
+    "memberID": 10,
+    "eventID": 2
+} 
+
+### Create Attendance - returns an error, event not existing
+POST http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "timeIn": "2021-04-18 07:00",
+    "timeOut": "2021-04-18 17:00",
+    "memberID": 3,
+    "eventID": 10
+} 
+
+
+
+### Get Member Attendance by MemberID 
+GET http://localhost:3000/api/members/2
+
+### Get Member Attendance by MemberID 
+GET http://localhost:3000/api/members/3
+
+
+
+### Get Event by EventID 
+GET http://localhost:3000/api/events/2
+
+
+
+### Delete Member - should not be able to delete
+DELETE http://localhost:3000/api/members/3
+
+
+
+### Export Event 
+GET http://localhost:3000/api/events/export?eventId=2
+
+
+
+
+### Update an Attendance -- update memberID = 3
+PUT http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "attendanceID": 1,
+    "timeIn": "2021-04-18 09:00",
+    "timeOut": "2021-04-18 17:00"
+} 
+
+### Update an Attendance - returns an error
+PUT http://localhost:3000/api/attendance
+Content-Type: application/json
+
+{
+    "attendanceID": 1,
+    "timeIn": "2022-04-18 09:00",
+    "timeOut": "2021-04-18 17:00"
+} 
+
+
+
+### Delete Attendance
+DELETE http://localhost:3000/api/attendance/1
+
+### Delete Attendance - returns an error
+DELETE http://localhost:3000/api/attendance/5

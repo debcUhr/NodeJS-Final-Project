@@ -1,0 +1,96 @@
+### Create a Member
+POST http://localhost:3000/api/members
+Content-Type: application/json 
+
+{
+    "name": "Deborah Uhrzz",
+    "joinedDate": "2021-03-24 00:00",
+    "status": "Active"
+}
+
+### Create a Member
+POST http://localhost:3000/api/members
+Content-Type: application/json 
+
+{
+    "name": "Zydjan Luna",
+    "joinedDate": "2021-01-08 00:00",
+    "status": "Active"
+}
+
+### Create a Member
+POST http://localhost:3000/api/members
+Content-Type: application/json 
+
+{
+    "name": "Destin Soluman",
+    "joinedDate": "2021-02-08 00:00",
+    "status": "Active"
+}
+
+### Create a Member - returns an error
+POST http://localhost:3000/api/members
+Content-Type: application/json 
+
+{
+    "name": "Deborah Casicas",
+    "joineDate": "2021-03-25 00:00",
+    "status": "Idle"
+}
+
+
+
+###Get All Members
+GET http://localhost:3000/api/members
+
+
+
+
+### Get Member by MemberID 
+GET http://localhost:3000/api/members/1
+
+### Get Member by MemberID - returns an error
+GET http://localhost:3000/api/members/6
+
+
+
+### Update a Member 
+PUT http://localhost:3000/api/members
+Content-Type: application/json
+
+{
+    "memberID": 1,
+    "name": "Deborah Uhr",
+    "joinedDate": "2021-03-24 00:00",
+    "status": "In-active"
+}
+
+
+### Update a Member - returns an error
+PUT http://localhost:3000/api/members
+Content-Type: application/json
+
+{
+    "memberID": 6,
+    "name": "Deborah Uhr",
+    "joinedDate": "2021-03-24 00:00",
+    "status": "In-active"
+}
+
+
+### Delete Member
+DELETE http://localhost:3000/api/members/1
+
+
+### Delete Member -- returns an error
+DELETE http://localhost:3000/api/members/10
+
+
+
+### Search Member 
+GET http://localhost:3000/api/members/search?name=Zydjan%20Luna&status=Active
+
+### Search Member - returns an error
+GET http://localhost:3000/api/members/search?name=Deborah%20Uhr&status=Active
+
+

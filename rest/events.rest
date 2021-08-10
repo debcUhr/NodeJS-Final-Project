@@ -1,0 +1,117 @@
+### Create an Event 
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+    "eventName": "NodeJS Magenic Masters",
+    "eventType": "Training",
+    "startDateTime": "2021-06-02 16:00",
+    "endDateTime": "2021-07-01 16:00"
+}
+
+### Create an Event 
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+    "eventName": "Business Communication Workshop",
+    "eventType": "Training",
+    "startDateTime": "2021-04-18 06:00",
+    "endDateTime": "2021-04-18 17:00"
+}
+
+### Create an Event -- return error, missing startdatetime
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+    "eventName": "NodeJS Magenic Masters",
+    "eventType": "Training",
+    "endDateTime": "2021-07-01 16:00"
+}
+
+
+
+###Get All Events
+GET http://localhost:3000/api/events
+
+
+
+
+### Get Event by EventID 
+GET http://localhost:3000/api/events/2
+
+
+### Get Event by EventID - returns an error
+GET http://localhost:3000/api/events/10
+
+
+
+
+### Update an Event 
+PUT http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+    "eventID": 1,
+    "eventName": "NodeJS Magenic Masters",
+    "eventType": "Training",
+    "startDateTime": "2021-06-01 16:00",
+    "endDateTime":"2021-07-01 16:00"
+}
+
+### Update an Event - returns an error
+PUT http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+    "eventID": 1,
+    "eventName": "NodeJS Magenic Masters",
+    "eventType": "Training",
+    "startDateTime":  "2021-04-22 17:00",
+    "endDateTime":  "2020-04-22 17:00"
+}
+
+
+
+### Delete Event
+DELETE http://localhost:3000/api/events/1
+
+### Delete Event - returns an error
+DELETE http://localhost:3000/api/events/10
+
+
+
+### Export Event - no data to export yet, will be able to export in attendance.rest file
+GET http://localhost:3000/api/events/export?eventId=2
+
+### Export Event - returns an error
+GET http://localhost:3000/api/events/export?eventId=10
+
+
+
+### Search Event
+GET http://localhost:3000/api/events/search?eventname=Business%20Communication%20Workshop&datestart=2021_04_18&dateend=2021_04_18
+
+### Search Event - returns an error
+GET http://localhost:3000/api/events/search?eventname=sampleEvent&datestart=2021_01_21&dateend=2023_01_21
+
+### Search Event - returns an error
+GET http://localhost:3000/api/events/search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
